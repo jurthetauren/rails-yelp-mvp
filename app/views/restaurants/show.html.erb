@@ -1,0 +1,14 @@
+<h1><%= @restaurant.name %></h1>
+<p><%= @restaurant.address %></p>
+<p><%= @restaurant.phone_number %></p>
+<p><%= @restaurant.category %></p>
+
+<td><%= link_to "- Reviews", restaurant_reviews_path(@restaurant) %></td>
+
+<%= form_for [@restaurant, @review] do |a| %>
+<%= a.label :content %>
+<%= a.text_field :content %>
+<%= a.label :rating %>
+<%= a.number_field :rating %>
+<%= a.submit %>
+<% end %>

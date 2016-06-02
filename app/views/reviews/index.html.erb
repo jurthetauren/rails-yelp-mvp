@@ -1,0 +1,13 @@
+<h1> This is a list of all the reviews!</h1>
+
+<%= link_to 'Create a review', new_restaurant_review_path(@restaurant) %>
+<% @reviews.each do |review| %>
+<ul>
+  <li id='review' class='review-box'>
+    <h2><%= review.content %></h2>
+    <td><%= review.rating %></td>
+    <td><%= link_to "- Show", restaurant_review_path(@restaurant, review) %></td>
+  </li>
+</ul>
+<% end %>
+

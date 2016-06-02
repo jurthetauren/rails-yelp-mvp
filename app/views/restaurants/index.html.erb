@@ -1,0 +1,21 @@
+<h1> This is a list of all the Restaurant!</h1>
+
+
+<% @restaurants.each do |restaurant| %>
+<ul>
+  <li id='restaurant' class='restaurant-box'>
+    <h2><%= restaurant.name %></h2>
+    <td><%= restaurant.address %></td>
+    <td><%= restaurant.phone_number %></td>
+    <td><%= restaurant.category %></td>
+    <td><%= link_to "- Reviews", restaurant_reviews_path(restaurant) %></td>
+    <td><%= link_to "- Show", restaurant %></td>
+    <td><%= link_to "- Edit", edit_restaurant_path(restaurant) %></td>
+    <td><%= link_to "- Delete restaurant", restaurant, method: :delete, data: { confirm: "Do you really want to delete this Restaurant?" } %></td>
+  </li>
+</ul>
+<% end %>
+
+
+
+
